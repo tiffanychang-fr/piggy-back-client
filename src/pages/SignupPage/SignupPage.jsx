@@ -4,22 +4,26 @@ import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
 
 function SignupPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    city: "",
+    country: "",
+    phoneNumber: "",
+  });
 
   const navigate = useNavigate();
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
-    const requestBody = { email, password, name };
-
     // Send a request to the server using axios
     /* 
     const authToken = localStorage.getItem("authToken");
@@ -33,7 +37,7 @@ function SignupPage() {
 
     // Or using a service
     authService
-      .signup(requestBody)
+      .signup(form)
       .then((response) => {
         // If the POST request is successful redirect to the login page
         navigate("/login");
@@ -50,19 +54,53 @@ function SignupPage() {
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
+        <label>UserName:</label>
+        <input
+          type="text"
+          name="username"
+          value={form.username}
+          onChange={handleChange}
+        />
+
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
 
         <label>Password:</label>
         <input
           type="password"
           name="password"
-          value={password}
-          onChange={handlePassword}
+          value={form.password}
+          onChange={handleChange}
         />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <label>City:</label>
+        <input
+          type="text"
+          name="city"
+          value={form.city}
+          onChange={handleChange}
+        />
+
+        <label>Country:</label>
+        <input
+          type="text"
+          name="country"
+          value={form.country}
+          onChange={handleChange}
+        />
+
+        <label>Phone Number:</label>
+        <input
+          type="text"
+          name="phoneNumber"
+          value={form.phoneNumber}
+          onChange={handleChange}
+        />
 
         <button type="submit">Sign Up</button>
       </form>

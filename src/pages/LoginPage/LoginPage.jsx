@@ -5,21 +5,25 @@ import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+  });
 
   const navigate = useNavigate();
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+  };
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { email, password };
-
     // Send a request to the server using axios
     /* 
     axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`)
@@ -28,7 +32,7 @@ function LoginPage() {
 
     // Or using a service
     authService
-      .login(requestBody)
+      .login(form)
       .then((response) => {
         // If the POST request is successful store the authentication token,
         // after the token is stored authenticate the user
@@ -49,15 +53,20 @@ function LoginPage() {
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <label>Username:</label>
+        <input
+          type="text"
+          name="username"
+          value={form.username}
+          onChange={handleChange}
+        />
 
         <label>Password:</label>
         <input
           type="password"
           name="password"
-          value={password}
-          onChange={handlePassword}
+          value={form.password}
+          onChange={handleChange}
         />
 
         <button type="submit">Login</button>
