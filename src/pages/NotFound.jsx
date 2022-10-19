@@ -1,6 +1,4 @@
-import "./NotFoundPage.css";
-
-function NotFoundPage() {
+function NotFound() {
   return (
     <div>
       <h1>Page Not Found</h1>
@@ -9,4 +7,4 @@ function NotFoundPage() {
   );
 }
 
-export default NotFoundPage;
+export default NotFound;

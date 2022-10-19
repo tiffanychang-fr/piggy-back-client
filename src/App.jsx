@@ -1,14 +1,14 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import Home from "./pages/Home";
+import UserProfile from "./pages/UserProfile";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
-import Navbar from "./components/Navbar/Navbar";
-import IsPrivate from "./components/IsPrivate/IsPrivate";
-import IsAnon from "./components/IsAnon/IsAnon";
+import Navbar from "./components/Navbar";
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
@@ -16,13 +16,13 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
 
         <Route
           path="/profile"
           element={
             <IsPrivate>
-              <ProfilePage />
+              <UserProfile />
             </IsPrivate>
           }
         />
@@ -31,7 +31,7 @@ function App() {
           path="/signup"
           element={
             <IsAnon>
-              <SignupPage />
+              <Signup />
             </IsAnon>
           }
         />
@@ -39,7 +39,7 @@ function App() {
           path="/login"
           element={
             <IsAnon>
-              <LoginPage />
+              <Login />
             </IsAnon>
           }
         />
