@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import UserProfile from "./pages/UserProfile";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import MyPosts from "./pages/MyPosts";
+import MyOrders from "./pages/MyOrders";
+import DashboardSeller from "./pages/DashboardSeller";
 
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
@@ -41,6 +45,42 @@ function App() {
             <IsAnon>
               <Login />
             </IsAnon>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <IsPrivate>
+              <Dashboard />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/my-posts"
+          element={
+            <IsPrivate>
+              <MyPosts />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/my-orders"
+          element={
+            <IsPrivate>
+              <MyOrders />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/seller"
+          element={
+            <IsPrivate>
+              <DashboardSeller />
+            </IsPrivate>
           }
         />
       </Routes>
