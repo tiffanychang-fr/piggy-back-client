@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 import authService from "../services/auth.service";
 
 function Signup() {
@@ -15,6 +16,7 @@ function Signup() {
   });
 
   const navigate = useNavigate();
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +41,11 @@ function Signup() {
       .signup(form)
       .then((response) => {
         // If the POST request is successful redirect to the login page
-        navigate("/login");
+        storeToken(response.data.authToken);
+        authenticateUser();
+
+        // navigate("/login");
+        navigate("/dashboard");
       })
       .catch((error) => {
         // If the request resolves with an error, set the error message in the state
