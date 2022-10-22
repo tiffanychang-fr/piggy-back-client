@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import MyPosts from "./pages/MyPosts";
 import MyOrders from "./pages/MyOrders";
 import DashboardSeller from "./pages/DashboardSeller";
+import EditProfile from "./pages/EditProfile";
 
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
@@ -17,6 +18,7 @@ import IsAnon from "./components/IsAnon";
 function App() {
   return (
     <div className="App">
+      <h1>#Titos!</h1>
       <Navbar />
 
       <Routes>
@@ -80,6 +82,15 @@ function App() {
           element={
             <IsPrivate>
               <DashboardSeller />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile/edit"
+          element={
+            <IsPrivate>
+              <EditProfile />
             </IsPrivate>
           }
         />

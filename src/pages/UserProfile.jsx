@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import { Link } from "react-router-dom";
 
 function UserProfile() {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   return (
     <div>
@@ -13,6 +13,10 @@ function UserProfile() {
       <h2>City: {user && user.city}</h2>
       <h2>Country: {user && user.country}</h2>
       <h2>Phone: {user && user.phoneNumber}</h2>
+
+      <Link to="/profile/edit">
+        <button>Edit Profile</button>
+      </Link>
     </div>
   );
 }
