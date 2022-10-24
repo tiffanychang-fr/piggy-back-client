@@ -10,6 +10,7 @@ import MyPosts from "./pages/MyPosts";
 import MyOrders from "./pages/MyOrders";
 import DashboardSeller from "./pages/DashboardSeller";
 import EditProfile from "./pages/EditProfile";
+import StripeCallback from "./pages/Stripe/StripeCallback";
 
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
@@ -23,15 +24,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route
-          path="/profile"
-          element={
-            <IsPrivate>
-              <UserProfile />
-            </IsPrivate>
-          }
-        />
 
         <Route
           path="/signup"
@@ -55,6 +47,15 @@ function App() {
           element={
             <IsPrivate>
               <Dashboard />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              <UserProfile />
             </IsPrivate>
           }
         />
@@ -91,6 +92,15 @@ function App() {
           element={
             <IsPrivate>
               <EditProfile />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/stripe/callback"
+          element={
+            <IsPrivate>
+              <StripeCallback />
             </IsPrivate>
           }
         />
