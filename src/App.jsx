@@ -14,6 +14,7 @@ import EditProfile from "./pages/EditProfile";
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -91,6 +92,14 @@ function App() {
           element={
             <IsPrivate>
               <EditProfile />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/my-posts/create"
+          element={
+            <IsPrivate>
+              <CreatePost />
             </IsPrivate>
           }
         />
