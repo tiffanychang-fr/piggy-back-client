@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
-import createOrderService from "../services/create-order.service";
+import postService from "../services/post.service";
 
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
@@ -17,8 +17,8 @@ const CreatePost = () => {
     e.preventDefault();
     console.log({ form });
 
-    createOrderService
-      .createOrder(user, form)
+    postService
+      .createPost(user, form)
       .then((response) => {
         console.log(`log of response.data from CreatePost.jsx:`, response.data);
       })
