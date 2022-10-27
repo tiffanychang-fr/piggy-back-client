@@ -15,6 +15,7 @@ import StripeCallback from "./pages/Stripe/StripeCallback";
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -101,6 +102,14 @@ function App() {
           element={
             <IsPrivate>
               <StripeCallback />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/my-posts/create"
+          element={
+            <IsPrivate>
+              <CreatePost />
             </IsPrivate>
           }
         />
