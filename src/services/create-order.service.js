@@ -9,10 +9,17 @@ class CreateOrderService {
     });
   }
 
+  getAllOrders = () => {
+    return this.api.get("/my-posts");
+  };
+
   createOrder = (user, requestBody) => {
-    const { username } = user;
-    console.log(`username from the createOrder:`, username);
-    return this.api.post("/my-posts/create", { username, requestBody });
+    const { username } = user; // destructure the username from the user model/object
+
+    return this.api.post("/my-posts/create", {
+      username,
+      requestBody,
+    }); // add the username to the post request to search for a user
   };
 }
 

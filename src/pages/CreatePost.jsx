@@ -20,7 +20,7 @@ const CreatePost = () => {
     createOrderService
       .createOrder(user, form)
       .then((response) => {
-        console.log(response);
+        console.log(`log of response.data from CreatePost.jsx:`, response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -94,17 +94,7 @@ const CreatePost = () => {
             />
           </label>
         </div>
-        {/* <div className="form-group">
-          <label>
-            Posted by:
-            <input
-              type="text"
-              name="postBy"
-              value={form.postBy}
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
+
         <button type="submit">Submit post</button>
       </form>
     </div>
