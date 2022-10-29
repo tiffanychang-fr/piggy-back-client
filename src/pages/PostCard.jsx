@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import postService from "../services/post.service";
+
 const PostCard = ({ post }) => {
   const navigate = useNavigate();
+
   const handleClick = () => {
     postService
       .getSingleEditPost(post)
@@ -15,6 +17,20 @@ const PostCard = ({ post }) => {
       });
   };
 
+  const handleDelete = () => {
+    postService
+      .deletePost(post)
+      .then((response) => {
+        console.log(`handleDelete function is successfull`, response);
+        navigate("/my-posts");
+      })
+      .catch((err) => {
+        console.log(
+          `oopsie there went someting wrong with the handle delete function`,
+          err
+        );
+      });
+  };
   return (
     <div className="col-md-4 mt-3">
       <div className="card bg-dark text-light">
@@ -34,6 +50,9 @@ const PostCard = ({ post }) => {
             Edit Post
           </button>
         </Link>
+        <button type="submit" onClick={handleDelete}>
+          Delete post
+        </button>
       </div>
     </div>
   );

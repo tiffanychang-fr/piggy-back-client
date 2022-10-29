@@ -30,6 +30,14 @@ class PostService {
   editPost = (postId, requestBody) => {
     return this.api.post(`/my-posts/edit/${postId}`, requestBody);
   };
+
+  deletePost = (post) => {
+    console.log(
+      `Hello from the delete middleware, the postId of this post is:`,
+      post._id
+    );
+    return this.api.delete(`/my-posts/delete/${post._id}`);
+  };
 }
 
 const postService = new PostService();
