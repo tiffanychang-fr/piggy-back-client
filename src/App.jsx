@@ -19,6 +19,7 @@ import IsAnon from "./components/IsAnon";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import PostDetail from "./pages/PostDetail";
+import CreateOffer from "./pages/CreateOffer";
 
 function App() {
   return (
@@ -139,6 +140,14 @@ function App() {
           element={
             <IsPrivate>
               <PostDetail />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/create-offer/:postId"
+          element={
+            <IsPrivate>
+              <CreateOffer />
             </IsPrivate>
           }
         />
