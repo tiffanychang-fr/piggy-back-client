@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import MyPosts from "./pages/MyPosts";
+import MyOffers from "./pages/MyOffers";
 import MyOrders from "./pages/MyOrders";
 import DashboardSeller from "./pages/DashboardSeller";
 import EditProfile from "./pages/EditProfile";
@@ -73,6 +74,15 @@ function App() {
         />
 
         <Route
+          path="/my-offers"
+          element={
+            <IsPrivate>
+              <MyOffers />
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/my-orders"
           element={
             <IsPrivate>
@@ -107,6 +117,7 @@ function App() {
             </IsPrivate>
           }
         />
+
         <Route
           path="/my-posts/create"
           element={
