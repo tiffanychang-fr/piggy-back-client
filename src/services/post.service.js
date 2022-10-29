@@ -11,7 +11,6 @@ class PostService {
 
   getAllPosts = (user) => {
     const { _id } = user;
-    console.log(`createOrder id:`, _id);
     return this.api.get(`/my-posts/?userId=${_id}`);
   };
 
@@ -21,6 +20,15 @@ class PostService {
       username,
       requestBody,
     }); // add the username to the post request to search for a user
+  };
+
+  getSingleEditPost = (post) => {
+    console.log(`hello form the editPost function`);
+    return this.api.get(`/my-posts/edit/${post._id}`, post);
+  };
+
+  editPost = (postId, requestBody) => {
+    return this.api.post(`/my-posts/edit/${postId}`, requestBody);
   };
 }
 

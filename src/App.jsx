@@ -16,6 +16,8 @@ import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import CreatePost from "./pages/CreatePost";
+import EditPost from "./pages/EditPost";
+import PostDetail from "./pages/PostDetail";
 
 function App() {
   return (
@@ -110,6 +112,22 @@ function App() {
           element={
             <IsPrivate>
               <CreatePost />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/my-posts/edit/:postId"
+          element={
+            <IsPrivate>
+              <EditPost />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/my-posts/details/:postId"
+          element={
+            <IsPrivate>
+              <PostDetail />
             </IsPrivate>
           }
         />
