@@ -6,7 +6,7 @@ function Dashboard() {
       <h1>Dashboard page</h1>
       <div className="container">
         <div className="row justify-content-around mt-5">
-          <div className="col-md-3 ">
+          <div className="col-md-3 my-2">
             <div className="card border-primary ">
               <div className="card-body">
                 <Link className="text-decoration-none " to={"/profile"}>
@@ -15,7 +15,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 my-2">
             <div className="card border-primary ">
               <div className="card-body ">
                 <Link className="text-decoration-none" to={"/my-posts"}>
@@ -24,7 +24,16 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 my-2">
+            <div className="card border-primary ">
+              <div className="card-body ">
+                <Link className="text-decoration-none" to={"/my-offers"}>
+                  <h3 className="py-3 px-3">My Offers</h3>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 my-2">
             <div className="card border-primary ">
               <div className="card-body">
                 <Link className="text-decoration-none" to={"/my-orders"}>
@@ -33,7 +42,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 my-2">
             <div className="card border-primary ">
               <div className="card-body">
                 <Link className="text-decoration-none" to={"/seller"}>

@@ -32,6 +32,55 @@ class StripeService {
       }
     );
   };
+
+  getAccountBalance = (user, token) => {
+    const { username } = user;
+    return this.api.post(
+      "/get-account-balance",
+      { username },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  };
+
+  currencyFormatter = (balancePending) => {
+    return (balancePending.amount / 100).toLocaleString(
+      balancePending.currency,
+      {
+        style: "currency",
+        currency: balancePending.currency,
+      }
+    );
+  };
+
+  payoutSetting = (user, token) => {
+    const { username } = user;
+    return this.api.post(
+      "/payout-setting",
+      { username },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  };
+
+  getSessionId = (token, offerId) => {
+    console.log("hit stripe service");
+    return this.api.post(
+      "/stripe-session-id",
+      { offerId },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  };
 }
 
 const stripeService = new StripeService();
