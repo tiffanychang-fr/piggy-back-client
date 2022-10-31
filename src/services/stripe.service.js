@@ -70,7 +70,6 @@ class StripeService {
   };
 
   getSessionId = (token, offerId) => {
-    console.log("hit stripe service");
     return this.api.post(
       "/stripe-session-id",
       { offerId },
@@ -80,6 +79,11 @@ class StripeService {
         },
       }
     );
+  };
+
+  stripeSuccessRequest = (user, offerId) => {
+    const userId = user._id;
+    return this.api.post("/stripe-success", { userId, offerId });
   };
 }
 

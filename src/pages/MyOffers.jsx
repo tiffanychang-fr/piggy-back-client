@@ -56,9 +56,12 @@ function MyOffers() {
             ? fakeOffers.map((offer) => (
                 <OfferCard key={offer._id} offer={offer} />
               ))
-            : allOffers.map((offer) => (
-                <OfferCard key={offer._id} offer={offer} />
-              ))}
+            : allOffers.map(
+                (offer) =>
+                  offer.isAccepted === false && (
+                    <OfferCard key={offer._id} offer={offer} />
+                  )
+              )}
         </div>
       </div>
     </div>

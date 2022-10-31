@@ -8,14 +8,18 @@ const PostDetail = () => {
   const { user } = useContext(AuthContext);
   const { postId } = useParams();
   const postData = useLocation();
-  const postByUserId = postData.state.postBy;
+  const postByUserId = postData.state?.postBy;
+  // console.log(postData.state);
+  // console.log(postByUserId);
   const [allOffersByPost, setAllOffersByPost] = useState([]);
 
   // Render all offers of this post
   useEffect(() => {
     offerService
       .getAllOffersByPost(postId)
-      .then((response) => setAllOffersByPost(response.data))
+      .then((response) => {
+        setAllOffersByPost(response.data);
+      })
       .catch((error) => console.log(error));
   }, [postId]);
 
@@ -38,20 +42,29 @@ const PostDetail = () => {
       <h1>My Offers</h1>
 
       {/* Post owner cannot make an offer to his/ her own post*/}
-      {user._id !== postByUserId && (
+      {/* {user._id !== postByUserId && (
         <Link to={{ pathname: `/create-offer/${postId}` }}>
           <button className="btn btn-warning btn-lg mt-3" onClick={handleClick}>
             Make an offer !
           </button>
         </Link>
-      )}
+      )} */}
+
+      <Link to={{ pathname: `/create-offer/${postId}` }}>
+        <button className="btn btn-warning btn-lg mt-3" onClick={handleClick}>
+          Make an offer !
+        </button>
+      </Link>
 
       {/* show all the offers */}
       <div className="container">
         <div className="row mt-3">
-          {allOffersByPost.map((offer) => (
-            <OfferCard key={offer._id} offer={offer} />
-          ))}
+          {allOffersByPost.map(
+            (offer) =>
+              offer.isAccepted === false && (
+                <OfferCard key={offer._id} offer={offer} />
+              )
+          )}
         </div>
       </div>
     </div>

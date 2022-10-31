@@ -1,20 +1,27 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import stripeService from "../services/stripe.service.js";
+import { loadStripe } from "@stripe/stripe-js";
 
 const OfferCard = ({ offer }) => {
   const { getToken } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const handleAccept = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       let response = await stripeService.getSessionId(getToken(), offer._id);
-      console.log(
-        "Response received from stripe server, stripe session Id:",
-        response.data
-      );
+
+      const stripe = await loadStripe(process.env.REACT_APP_STRIPE_KEY);
+      stripe
+        .redirectToCheckout({
+          sessionId: response.data.sessionId,
+        })
+        .then((result) => {
+          console.log(result);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -38,12 +45,14 @@ const OfferCard = ({ offer }) => {
           <button
             className="btn btn-light mx-1 text-primary"
             onClick={handleAccept}
+            disabled={loading}
           >
             Accept
           </button>
           <button
             className="btn btn-light mx-1 text-danger"
             onClick={handleRefuse}
+            disabled={loading}
           >
             Refuse
           </button>
