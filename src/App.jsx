@@ -12,6 +12,8 @@ import MyOrders from "./pages/MyOrders";
 import DashboardSeller from "./pages/DashboardSeller";
 import EditProfile from "./pages/EditProfile";
 import StripeCallback from "./pages/Stripe/StripeCallback";
+import StripeSuccess from "./pages/Stripe/StripeSuccess";
+import StripeCancel from "./pages/Stripe/StripeCancel";
 
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
@@ -20,6 +22,7 @@ import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import PostDetail from "./pages/PostDetail";
 import AllPosts from "./pages/AllPosts";
+import CreateOffer from "./pages/CreateOffer";
 
 function App() {
   return (
@@ -112,15 +115,6 @@ function App() {
         />
 
         <Route
-          path="/stripe/callback"
-          element={
-            <IsPrivate>
-              <StripeCallback />
-            </IsPrivate>
-          }
-        />
-
-        <Route
           path="/my-posts/create"
           element={
             <IsPrivate>
@@ -141,6 +135,41 @@ function App() {
           element={
             <IsPrivate>
               <PostDetail />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/create-offer/:postId"
+          element={
+            <IsPrivate>
+              <CreateOffer />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/stripe/callback"
+          element={
+            <IsPrivate>
+              <StripeCallback />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/stripe/success/:offerId"
+          element={
+            <IsPrivate>
+              <StripeSuccess />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/stripe/cancel"
+          element={
+            <IsPrivate>
+              <StripeCancel />
             </IsPrivate>
           }
         />
