@@ -19,6 +19,7 @@ import IsAnon from "./components/IsAnon";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import PostDetail from "./pages/PostDetail";
+import AllPosts from "./pages/AllPosts";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/all-posts" element={<AllPosts />} />
 
         <Route
           path="/signup"

@@ -13,6 +13,9 @@ function Navbar() {
       <Link to="/">
         <button>Home</button>
       </Link>
+      <Link to="/all-posts">
+        <button>Show all posts</button>
+      </Link>
 
       {isLoggedIn && (
         <>

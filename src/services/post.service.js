@@ -9,6 +9,11 @@ class PostService {
     });
   }
 
+  showAllPosts = () => {
+    console.log(`Hello from the showAllPosts middleware`);
+    return this.api.get("/all-posts");
+  };
+
   getAllPosts = (user) => {
     const { _id } = user;
     return this.api.get(`/my-posts/?userId=${_id}`);
