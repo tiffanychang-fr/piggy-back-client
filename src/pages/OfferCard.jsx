@@ -45,7 +45,7 @@ const OfferCard = ({ offer }) => {
             className="btn btn-light mx-1 text-danger"
             onClick={handleRefuse}
           >
-            Refused
+            Refuse
           </button>
         </div>
       </div>

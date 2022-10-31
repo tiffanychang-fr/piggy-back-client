@@ -11,11 +11,18 @@ class OfferService {
 
   getAllOffers = (user) => {
     const { _id } = user;
-    return this.api.get(`/create-offer/?userId=${_id}`);
+    return this.api.get(`/get-all-offers/?userId=${_id}`);
   };
 
-  getOfferPage = (postId) => {
-    return this.api.get(`/create-offer/${postId}`);
+  getAllOffersByPost = (postId) => {
+    return this.api.get(`/get-all-offers-by-post/?postId=${postId}`);
+  };
+
+  getOfferPage = (postId, user, postByUserId) => {
+    const { _id } = user;
+    return this.api.get(
+      `/create-offer/${postId}/?userId=${_id}&postByUserId=${postByUserId}`
+    );
   };
 
   createOffer = (user, postId, requestBody) => {

@@ -1,7 +1,22 @@
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 import OfferCard from "./OfferCard";
+import offerService from "../services/offer.service.js";
 
 function MyOffers() {
+  const { user } = useContext(AuthContext);
+  const [allOffers, setAllOffers] = useState([]);
+
+  // Render all the offers of this post
+  useEffect(() => {
+    offerService
+      .getAllOffers(user)
+      .then((response) => setAllOffers(response.data))
+      .catch((error) => console.log(error));
+  }, [user]);
+
   // An offer could be proposed upon a post
+  // Keep the fakeOffers array as default value for the demo purpose
   const fakeOffers = [
     {
       _id: "imamafakeofferid",
@@ -37,9 +52,13 @@ function MyOffers() {
       <h1>My Offers</h1>
       <div className="container">
         <div className="row mt-4">
-          {fakeOffers.map((offer) => (
-            <OfferCard key={offer._id} offer={offer} />
-          ))}
+          {allOffers.length === 0
+            ? fakeOffers.map((offer) => (
+                <OfferCard key={offer._id} offer={offer} />
+              ))
+            : allOffers.map((offer) => (
+                <OfferCard key={offer._id} offer={offer} />
+              ))}
         </div>
       </div>
     </div>
