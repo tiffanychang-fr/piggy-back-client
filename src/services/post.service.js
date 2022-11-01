@@ -10,7 +10,6 @@ class PostService {
   }
 
   showAllPosts = () => {
-    console.log(`Hello from the showAllPosts middleware`);
     return this.api.get("/all-posts");
   };
 
