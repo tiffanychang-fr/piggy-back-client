@@ -13,9 +13,13 @@ const EditPost = () => {
   });
 
   const { postId } = useParams();
-  console.log(postId);
+
+  const location = useLocation();
+  const state = location.state;
+  console.log(`state:`, state);
+  console.log(`location:`, location);
   const data = useLocation();
-  console.log(data);
+  console.log(`data from useLocation:`, data);
 
   const navigate = useNavigate();
 

@@ -28,7 +28,6 @@ class PostService {
   };
 
   getSingleEditPost = (post) => {
-    console.log(`hello form the editPost function`);
     return this.api.get(`/my-posts/edit/${post._id}`, post);
   };
 

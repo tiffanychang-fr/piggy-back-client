@@ -9,7 +9,6 @@ const PostCard = ({ post }) => {
     postService
       .getSingleEditPost(post)
       .then((response) => {
-        console.log(`Response from the editPost function:`, response);
         navigate(`/my-posts/edit/${post._id}`);
       })
       .catch((err) => {
@@ -45,7 +44,10 @@ const PostCard = ({ post }) => {
         <Link to={{ pathname: `/my-posts/details/${post._id}` }} state={post}>
           <button>More details</button>
         </Link>
-        <Link to={{ pathname: `/my-posts/edit/${post._id}` }} state={post}>
+        <Link
+          to={{ pathname: `/my-posts/edit/${post._id}` }}
+          state={{ post: post }}
+        >
           <button onClick={handleClick} type="submit">
             Edit Post
           </button>
