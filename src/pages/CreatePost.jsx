@@ -47,6 +47,7 @@ const CreatePost = () => {
               name="title"
               value={form.title}
               onChange={handleChange}
+              placeholder="Add a title"
             />
           </label>
         </div>
@@ -58,6 +59,7 @@ const CreatePost = () => {
               name="description"
               value={form.description}
               onChange={handleChange}
+              placeholder="Add a description"
             />
           </label>
         </div>
@@ -69,6 +71,7 @@ const CreatePost = () => {
               name="country"
               value={form.country}
               onChange={handleChange}
+              placeholder="Add a country"
             />
           </label>
         </div>
@@ -80,6 +83,7 @@ const CreatePost = () => {
               name="city"
               value={form.city}
               onChange={handleChange}
+              placeholder="Add a city"
             />
           </label>
         </div>

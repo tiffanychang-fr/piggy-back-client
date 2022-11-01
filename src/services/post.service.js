@@ -26,6 +26,10 @@ class PostService {
     }); // add the username to the post request to search for a user
   };
 
+  getSinglePost(postId) {
+    return this.api.get(`/my-posts/edit/details/${postId}`);
+  }
+
   getSingleEditPost = (post) => {
     return this.api.get(`/my-posts/edit/${post._id}`, post);
   };

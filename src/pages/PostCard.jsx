@@ -37,17 +37,14 @@ const PostCard = ({ post }) => {
           <div className="card-title">Title: {post.title}</div>
           <div className="card-text">Description: {post.description}</div>
           <div className="card-text">Country: {post.country}</div>
-          <div className="card-text">City: {post.city}</div>
+          {/* <div className="card-text">City: {post.city}</div>
           <div className="card-text">Budget: {post.budget}</div>
-          <div className="card-text muted">Posted by:{post.postBy}</div>
+          <div className="card-text muted">Posted by:{post.postBy}</div> */}
         </div>
         <Link to={{ pathname: `/my-posts/details/${post._id}` }} state={post}>
           <button>More details</button>
         </Link>
-        <Link
-          to={{ pathname: `/my-posts/edit/${post._id}` }}
-          state={{ post: post }}
-        >
+        <Link to={{ pathname: `/my-posts/edit/${post._id}` }} state={post}>
           <button onClick={handleClick} type="submit">
             Edit Post
           </button>

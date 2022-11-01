@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import postService from "../services/post.service";
 
 const EditPost = () => {
@@ -14,14 +14,16 @@ const EditPost = () => {
 
   const { postId } = useParams();
 
-  const location = useLocation();
-  const state = location.state;
-  console.log(`state:`, state);
-  console.log(`location:`, location);
-  const data = useLocation();
-  console.log(`data from useLocation:`, data);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (postId) {
+      postService.getSinglePost(postId).then((response) => {
+        console.log("response: ", response);
+        setForm(response.data);
+      });
+    }
+  }, [postId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

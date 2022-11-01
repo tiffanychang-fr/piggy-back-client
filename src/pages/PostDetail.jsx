@@ -3,6 +3,7 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import OfferCard from "./OfferCard";
 import offerService from "../services/offer.service.js";
+import PostDetailCard from "./PostDetailCard";
 
 const PostDetail = () => {
   const { user } = useContext(AuthContext);
@@ -38,6 +39,7 @@ const PostDetail = () => {
     <div>
       <h1>Post Details</h1>
       <p>This space is kept for tony to populate the post details✌️</p>
+      <PostDetailCard postData={postData} />
       <h1>👣</h1>
       <h1>My Offers</h1>
 

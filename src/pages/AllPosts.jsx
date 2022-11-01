@@ -22,7 +22,7 @@ const AllPosts = () => {
       <div className="container mt-3">
         <div className="row">
           {allPosts.map((post) => (
-            <div className="col-md-4">
+            <div className="col-md-4" key={post._id}>
               <div className="card bg-dark text-light p-2 my-2">
                 <div className="card-body">
                   <h1>😎</h1>
