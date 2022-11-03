@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import postService from "../services/post.service";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, setPosts, posts }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -20,8 +20,11 @@ const PostCard = ({ post }) => {
     postService
       .deletePost(post)
       .then((response) => {
-        console.log(`handleDelete function is successfull`, response);
-        navigate("/my-posts");
+        const filteredPostList = posts.filter(
+          (filtereredPost) => filtereredPost._id !== post._id
+        );
+
+        setPosts(filteredPostList);
       })
       .catch((err) => {
         console.log(

@@ -6,14 +6,14 @@ import postService from "../services/post.service";
 
 const MyPosts = () => {
   const { user } = useContext(AuthContext);
-  const [posts, setAllPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     postService
       .getAllPosts(user)
       .then((result) => {
         console.log(`result from the myposts page`, result);
-        setAllPosts(result.data);
+        setPosts(result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +29,14 @@ const MyPosts = () => {
       <div className="container">
         <div className=" row justify-content-around mx-3 my-5">
           {posts.map((post) => {
-            return <PostCard post={post} key={post._id} />;
+            return (
+              <PostCard
+                post={post}
+                key={post._id}
+                setPosts={setPosts}
+                posts={posts}
+              />
+            );
           })}
         </div>
       </div>
