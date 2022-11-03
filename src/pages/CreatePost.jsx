@@ -21,11 +21,11 @@ const CreatePost = () => {
       .createPost(user, form)
       .then((response) => {
         console.log(`log of response.data from CreatePost.jsx:`, response.data);
+        navigate("/my-posts");
       })
       .catch((err) => {
         console.log(err);
       });
-    navigate("/my-posts");
   };
 
   const navigate = useNavigate();
