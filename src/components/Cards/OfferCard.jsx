@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import stripeService from "../../services/stripe.service.js";
 import { loadStripe } from "@stripe/stripe-js";
+import offerService from "../../services/offer.service";
 
-const OfferCard = ({ offer }) => {
+const OfferCard = ({ offer, allOffers, setAllOffers }) => {
   const { getToken } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
@@ -32,7 +33,18 @@ const OfferCard = ({ offer }) => {
 
   const handleRefuse = (e) => {
     e.preventDefault();
-    console.log("This offer is refused");
+    offerService
+      .refuseOffer(offer._id)
+      .then(() => {
+        const filteredOfferList = allOffers.filter(
+          (filteredPost) => filteredPost._id !== offer._id
+        );
+
+        setAllOffers(filteredOfferList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

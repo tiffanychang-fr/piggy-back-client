@@ -12,7 +12,6 @@ const MyPosts = () => {
     postService
       .getAllPosts(user)
       .then((result) => {
-        console.log(`result from the myposts page`, result);
         setPosts(result.data);
       })
       .catch((err) => {
@@ -23,11 +22,10 @@ const MyPosts = () => {
     <div>
       <h1>My Posts page</h1>
       <Link to="/my-posts/create">
-        <button>Create a post:</button>
+        <button className="btn btn-lg btn-warning my-3">➕Create Post</button>
       </Link>
-      <h3>🌵🎄🌲🌴🌱🌿🍀🎋🍃🍁🌷💐🥀</h3>
       <div className="container">
-        <div className=" row justify-content-around mx-3 my-5">
+        <div className=" row justify-content-around mx-3 my-3">
           {posts.map((post) => {
             return (
               <PostCard

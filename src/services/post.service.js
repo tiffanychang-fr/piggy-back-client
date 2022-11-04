@@ -39,10 +39,6 @@ class PostService {
   };
 
   deletePost = (post) => {
-    console.log(
-      `Hello from the delete middleware, the postId of this post is:`,
-      post._id
-    );
     return this.api.delete(`/my-posts/delete/${post._id}`);
   };
 }

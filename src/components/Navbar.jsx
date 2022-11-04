@@ -7,7 +7,6 @@ function Navbar() {
   // the values from AuthContext.Provider's `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-  console.log(user);
   return (
     <nav>
       <Link to="/">

@@ -59,7 +59,12 @@ function MyOffers() {
             : allOffers.map(
                 (offer) =>
                   offer.isAccepted === false && (
-                    <OfferCard key={offer._id} offer={offer} />
+                    <OfferCard
+                      key={offer._id}
+                      offer={offer}
+                      allOffers={allOffers}
+                      setAllOffers={setAllOffers}
+                    />
                   )
               )}
         </div>

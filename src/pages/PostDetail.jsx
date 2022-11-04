@@ -38,9 +38,7 @@ const PostDetail = () => {
   return (
     <div>
       <h1>Post Details</h1>
-      <p>This space is kept for tony to populate the post details✌️</p>
       <PostDetailCard postData={postData} />
-      <h1>👣</h1>
       <h1>My Offers</h1>
 
       {/* Post owner cannot make an offer to his/ her own post*/}

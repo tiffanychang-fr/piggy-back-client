@@ -21,7 +21,7 @@ const PostCard = ({ post, setPosts, posts }) => {
       .deletePost(post)
       .then((response) => {
         const filteredPostList = posts.filter(
-          (filtereredPost) => filtereredPost._id !== post._id
+          (filteredPost) => filteredPost._id !== post._id
         );
 
         setPosts(filteredPostList);
@@ -36,25 +36,35 @@ const PostCard = ({ post, setPosts, posts }) => {
   return (
     <div className="col-md-4 mt-3">
       <div className="card bg-dark text-light">
-        <div className="card-body">
-          <div className="card-title">Title: {post.title}</div>
-          <div className="card-text">Description: {post.description}</div>
-          <div className="card-text">Country: {post.country}</div>
+        <div className="card-body m-3">
+          <h3 className="card-title pb-2">Title: {post.title}</h3>
+          <h6 className="card-text text-start px-3">
+            Description: {post.description}
+          </h6>
+          <p className="card-text text-start px-3">Country: {post.country}</p>
           {/* <div className="card-text">City: {post.city}</div>
           <div className="card-text">Budget: {post.budget}</div>
           <div className="card-text muted">Posted by:{post.postBy}</div> */}
-        </div>
-        <Link to={{ pathname: `/my-posts/details/${post._id}` }} state={post}>
-          <button>More details</button>
-        </Link>
-        <Link to={{ pathname: `/my-posts/edit/${post._id}` }} state={post}>
-          <button onClick={handleClick} type="submit">
-            Edit Post
+          <Link to={{ pathname: `/my-posts/details/${post._id}` }} state={post}>
+            <button className="btn bg-warning m-1">More details</button>
+          </Link>
+          <Link to={{ pathname: `/my-posts/edit/${post._id}` }} state={post}>
+            <button
+              onClick={handleClick}
+              type="submit"
+              className="btn bg-light m-1"
+            >
+              Edit
+            </button>
+          </Link>
+          <button
+            type="submit"
+            className="btn bg-danger text-light m-1"
+            onClick={handleDelete}
+          >
+            Delete
           </button>
-        </Link>
-        <button type="submit" onClick={handleDelete}>
-          Delete post
-        </button>
+        </div>
       </div>
     </div>
   );

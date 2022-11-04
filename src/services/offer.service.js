@@ -29,6 +29,10 @@ class OfferService {
     const { _id } = user;
     return this.api.post(`/create-offer/${postId}/?userId=${_id}`, requestBody);
   };
+
+  refuseOffer = (offerId) => {
+    return this.api.delete(`/my-offers/delete/${offerId}`);
+  };
 }
 
 const offerService = new OfferService();
