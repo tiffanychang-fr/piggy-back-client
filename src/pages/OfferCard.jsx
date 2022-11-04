@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import stripeService from "../services/stripe.service.js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -6,6 +7,8 @@ import { loadStripe } from "@stripe/stripe-js";
 const OfferCard = ({ offer }) => {
   const { getToken } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleAccept = async (e) => {
     e.preventDefault();
@@ -20,7 +23,7 @@ const OfferCard = ({ offer }) => {
           sessionId: response.data.sessionId,
         })
         .then((result) => {
-          console.log(result);
+          navigate("/seller");
         });
     } catch (error) {
       console.log(error);

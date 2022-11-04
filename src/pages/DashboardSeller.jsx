@@ -1,11 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
+import caseService from "../services/case.service.js";
 import stripeService from "../services/stripe.service.js";
 import ConnectNav from "../components/ConnectNav";
+import CaseCard from "./CaseCard";
 
 function DashboardSeller() {
   const { user, getToken } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+  const [allAcceptedCases, setAllAcceptedCases] = useState([]);
+
+  // Render all the cases
+  useEffect(() => {
+    caseService
+      .getAllAcceptedCases(user)
+      .then((response) => {
+        setAllAcceptedCases(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, [user]);
 
   const handleClick = async () => {
     setLoading(true);
@@ -23,15 +36,21 @@ function DashboardSeller() {
   const connected = () => (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-6 offset-md-3 text-center">
+        <div className="col-md-6 offset-md-3 text-center mb-4">
           <h2>Your Cases</h2>
         </div>
       </div>
 
       <div className="row">
-        <p className="text-muted">
-          <small>There is no pending cases.</small>
-        </p>
+        {allAcceptedCases.length === 0 ? (
+          <p className="text-muted">
+            <small>There is no pending cases.</small>
+          </p>
+        ) : (
+          allAcceptedCases.map((singleCase) => (
+            <CaseCard key={singleCase._id} singleCase={singleCase} />
+          ))
+        )}
       </div>
     </div>
   );
