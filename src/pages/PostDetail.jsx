@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import OfferCard from "./OfferCard";
+import OfferCard from "../components/Cards/OfferCard";
 import offerService from "../services/offer.service.js";
-import PostDetailCard from "./PostDetailCard";
+import PostDetailCard from "../components/Cards/PostDetailCard";
 
 const PostDetail = () => {
   const { user } = useContext(AuthContext);

@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PostCard from "./PostCard";
+import PostCard from "../components/Cards/PostCard";
 import { AuthContext } from "../context/auth.context";
 import postService from "../services/post.service";
 

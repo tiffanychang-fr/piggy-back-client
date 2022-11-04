@@ -3,7 +3,7 @@ import { AuthContext } from "../context/auth.context";
 import caseService from "../services/case.service.js";
 import stripeService from "../services/stripe.service.js";
 import ConnectNav from "../components/ConnectNav";
-import CaseCard from "./CaseCard";
+import CaseCard from "../components/Cards/CaseCard";
 
 function DashboardSeller() {
   const { user, getToken } = useContext(AuthContext);

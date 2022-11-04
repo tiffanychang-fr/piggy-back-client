@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
-import stripeService from "../services/stripe.service.js";
+import { AuthContext } from "../../context/auth.context";
+import stripeService from "../../services/stripe.service.js";
 import { loadStripe } from "@stripe/stripe-js";
 
 const OfferCard = ({ offer }) => {

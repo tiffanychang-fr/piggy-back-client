@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import OfferCard from "./OfferCard";
+import OfferCard from "../components/Cards/OfferCard";
 import offerService from "../services/offer.service.js";
 
 function MyOffers() {

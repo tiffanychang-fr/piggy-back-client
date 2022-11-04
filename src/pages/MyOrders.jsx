@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import OrderCard from "./OrderCard";
+import OrderCard from "../components/Cards/OrderCard";
 import orderService from "../services/order.service";
 
 function MyOrders() {
