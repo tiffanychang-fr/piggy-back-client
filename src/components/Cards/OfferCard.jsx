@@ -5,7 +5,13 @@ import stripeService from "../../services/stripe.service.js";
 import { loadStripe } from "@stripe/stripe-js";
 import offerService from "../../services/offer.service";
 
-const OfferCard = ({ offer, allOffers, setAllOffers }) => {
+const OfferCard = ({
+  offer,
+  allOffers,
+  setAllOffers,
+  allOffersByPost,
+  setAllOffersByPost,
+}) => {
   const { getToken } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
@@ -36,11 +42,21 @@ const OfferCard = ({ offer, allOffers, setAllOffers }) => {
     offerService
       .refuseOffer(offer._id)
       .then(() => {
-        const filteredOfferList = allOffers.filter(
-          (filteredPost) => filteredPost._id !== offer._id
-        );
+        console.log(allOffers);
 
-        setAllOffers(filteredOfferList);
+        if (allOffers) {
+          const filteredOfferList = allOffers.filter(
+            (filteredOffer) => filteredOffer._id !== offer._id
+          );
+          setAllOffers(filteredOfferList);
+        }
+
+        if (allOffersByPost) {
+          const filteredOfferListByPost = allOffersByPost.filter(
+            (filteredOfferByPost) => filteredOfferByPost._id !== offer._id
+          );
+          setAllOffersByPost(filteredOfferListByPost);
+        }
       })
       .catch((err) => {
         console.log(err);

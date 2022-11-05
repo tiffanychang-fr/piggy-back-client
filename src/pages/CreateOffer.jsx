@@ -19,12 +19,11 @@ const CreateOffer = () => {
     offerService
       .createOffer(user, postId, form)
       .then((response) => {
-        console.log("Offer has been created", response.data);
+        navigate(`/my-posts/details/${postId}`);
       })
       .catch((err) => {
         console.log(err);
       });
-    navigate(`/my-posts/details/${postId}`);
   };
 
   const handleChange = (e) => {

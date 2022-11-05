@@ -40,6 +40,7 @@ const PostDetail = () => {
       <h1>Post Details</h1>
       <PostDetailCard postData={postData} />
       <h1>My Offers</h1>
+      {console.log(allOffersByPost[0])}
 
       {/* Post owner cannot make an offer to his/ her own post*/}
       {/* {user._id !== postByUserId && (
@@ -62,7 +63,12 @@ const PostDetail = () => {
           {allOffersByPost.map(
             (offer) =>
               offer.isAccepted === false && (
-                <OfferCard key={offer._id} offer={offer} />
+                <OfferCard
+                  key={offer._id}
+                  offer={offer}
+                  allOffersByPost={allOffersByPost}
+                  setAllOffersByPost={setAllOffersByPost}
+                />
               )
           )}
         </div>
