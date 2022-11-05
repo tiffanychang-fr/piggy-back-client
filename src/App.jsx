@@ -27,7 +27,6 @@ import CreateOffer from "./pages/CreateOffer";
 function App() {
   return (
     <div className="App">
-      <h1>#Titos!</h1>
       <Navbar />
 
       <Routes>
