@@ -11795,6 +11795,10 @@ p {
     margin-right: 0;
   }
 }
+
+.username {
+  color: #fff;
+}
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;

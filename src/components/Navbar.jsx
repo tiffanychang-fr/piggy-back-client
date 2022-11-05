@@ -45,13 +45,17 @@ function Navbar() {
                     Dashboard
                   </Link>
                 </div>
-                <button onClick={logOutUser}>LOGOUT</button>
+                <div className="nav-item">
+                  <Link className="nav-link" onClick={logOutUser}>
+                    LOGOUT
+                  </Link>
+                </div>
                 <div className="nav-item">
                   <Link className="nav-link" to="/profile">
                     Profile
                   </Link>
                 </div>
-                <span>{user && user.username}</span>
+                <span className="username">{user && user.username}</span>
               </>
             )}
 
