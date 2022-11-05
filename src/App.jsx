@@ -23,6 +23,7 @@ import EditPost from "./pages/EditPost";
 import PostDetail from "./pages/PostDetail";
 import AllPosts from "./pages/AllPosts";
 import CreateOffer from "./pages/CreateOffer";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -173,6 +174,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
