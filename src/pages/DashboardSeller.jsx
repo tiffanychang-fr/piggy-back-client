@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import caseService from "../services/case.service.js";
 import stripeService from "../services/stripe.service.js";
@@ -8,9 +9,20 @@ import CaseCard from "../components/Cards/CaseCard";
 function DashboardSeller() {
   const { user, getToken } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+  const [allPendingCases, setAllPendingCases] = useState([]);
   const [allAcceptedCases, setAllAcceptedCases] = useState([]);
+  const [pendingBtnIsActive, setPendingBtnIsActive] = useState(false);
 
   // Render all the cases
+  useEffect(() => {
+    caseService
+      .getAllPendingOffers(user)
+      .then((response) => {
+        setAllPendingCases(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, [user]);
+
   useEffect(() => {
     caseService
       .getAllAcceptedCases(user)
@@ -33,13 +45,42 @@ function DashboardSeller() {
     }
   };
 
+  const renderCases = () => (
+    <>
+      {pendingBtnIsActive &&
+        allPendingCases.map((singleCase) => (
+          <CaseCard key={singleCase._id} singleCase={singleCase} />
+        ))}
+
+      {!pendingBtnIsActive &&
+        allAcceptedCases.map((singleCase) => (
+          <CaseCard key={singleCase._id} singleCase={singleCase} />
+        ))}
+    </>
+  );
+
   const connected = () => (
     <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 text-center mb-4">
-          <h2>Your Cases</h2>
-        </div>
-      </div>
+      <ul className="nav nav-tabs mt-4 mb-3">
+        <li className="nav-item">
+          <Link
+            to="#"
+            className="btn"
+            onClick={() => setPendingBtnIsActive(true)}
+          >
+            <h4>Pending Requests</h4>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="#"
+            className="btn"
+            onClick={() => setPendingBtnIsActive(false)}
+          >
+            <h4>Your Cases</h4>
+          </Link>
+        </li>
+      </ul>
 
       <div className="row">
         {allAcceptedCases.length === 0 ? (
@@ -47,9 +88,7 @@ function DashboardSeller() {
             <small>There is no pending cases.</small>
           </p>
         ) : (
-          allAcceptedCases.map((singleCase) => (
-            <CaseCard key={singleCase._id} singleCase={singleCase} />
-          ))
+          renderCases()
         )}
       </div>
     </div>

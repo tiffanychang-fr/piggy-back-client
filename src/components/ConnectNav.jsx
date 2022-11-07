@@ -47,23 +47,28 @@ const ConnectNav = () => {
           user.stripe_seller &&
           user.stripe_seller.charges_enabled && (
             <>
-              <div className="container">
+              <div className="container-fluid">
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 className="h2 hb-0">Seller Dashboard</h1>
+                  <h5>Hello, @{user.username}</h5>
+                </div>
+
                 <div className="row justify-content-around my-3">
-                  <div className="col-md-3 text-center m-2">
-                    <div className="card bg-dark text-light">
+                  <div className="col-md-4 text-center my-2">
+                    <div className="card border-left-primary py-3">
                       <div className="card-body">
                         <h2>👾</h2>
-                        <h5 className="py-2">
+                        <h3 className="py-2 text-primary-dashboard">
                           Seller profile: @{user.username}
-                        </h5>
+                        </h3>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3 text-center m-2">
-                    <div className="card bg-dark text-light">
+                  <div className="col-md-4 text-center my-2">
+                    <div className="card border-left-success py-3">
                       <div className="card-body">
                         <h2>🛴</h2>
-                        <h5 className="py-2">
+                        <h3 className="py-2 text-success">
                           Pending balance:{" "}
                           {balance &&
                             balance.pending &&
@@ -74,18 +79,18 @@ const ConnectNav = () => {
                                 )}
                               </span>
                             ))}
-                        </h5>
+                        </h3>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3 text-center m-2">
-                    <div className="card bg-dark text-light">
+                  <div className="col-md-4 text-center my-2">
+                    <div className="card border-left-warning py-3">
                       <div
                         className="card-body"
                         onClick={() => handlePayoutSetting()}
                       >
                         <h2>🔧</h2>
-                        <h5 className="py-2">Payout settings</h5>
+                        <h3 className="py-2 text-warning">Payout settings</h3>
                       </div>
                     </div>
                   </div>

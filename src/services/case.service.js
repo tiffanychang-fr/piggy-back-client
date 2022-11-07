@@ -7,9 +7,14 @@ class CaseService {
     });
   }
 
+  getAllPendingOffers = (user) => {
+    const { _id } = user;
+    return this.api.get(`/seller/pending-offers/?userId=${_id}`);
+  };
+
   getAllAcceptedCases = (user) => {
     const { _id } = user;
-    return this.api.get(`/seller/?userId=${_id}`);
+    return this.api.get(`/seller/accepted-offers/?userId=${_id}`);
   };
 }
 

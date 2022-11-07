@@ -30,7 +30,7 @@ const OfferCard = ({
           sessionId: response.data.sessionId,
         })
         .then((result) => {
-          navigate("/seller");
+          navigate("/my-orders");
         });
     } catch (error) {
       console.log(error);

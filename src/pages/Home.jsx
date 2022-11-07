@@ -1,19 +1,38 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 function Home() {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <div>
       <header className="masthead">
         <div className="container">
-          <div className="masthead-subheading">Welcome To Piggy Back!</div>
-          <div className="masthead-heading text-uppercase">
-            It's Nice To Meet You
-          </div>
-          <Link to="/signup">
-            <button className="btn btn-primary btn-xl text-uppercase">
-              JOIN THE COMMUNITY
-            </button>
-          </Link>
+          {isLoggedIn && (
+            <>
+              <div className="masthead-subheading">Welcome Back!</div>
+              <div className="masthead-heading text-uppercase">Any news ?</div>
+              <Link to="/dashboard">
+                <button className="btn btn-primary btn-xl text-uppercase">
+                  GO TO DASHBOARD
+                </button>
+              </Link>
+            </>
+          )}
+
+          {!isLoggedIn && (
+            <>
+              <div className="masthead-subheading">Welcome To Piggy Back!</div>
+              <div className="masthead-heading text-uppercase">
+                It's Nice To Meet You
+              </div>
+              <Link to="/signup">
+                <button className="btn btn-primary btn-xl text-uppercase">
+                  JOIN THE COMMUNITY
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </header>
       <section className="page-section" id="services">

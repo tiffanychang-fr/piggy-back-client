@@ -56,64 +56,96 @@ function Signup() {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <h1 class="mt-5">Join community</h1>
+      <main className="form-signup w-100 m-auto">
+        <form onSubmit={handleSignupSubmit}>
+          <h1 class="h5 mb-3 fw-normal">Create account</h1>
+          <div className="form-floating">
+            <input
+              type="text"
+              name="username"
+              className="form-control"
+              value={form.username}
+              placeholder="Username"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">Username</label>
+          </div>
+          <div className="form-floating">
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              value={form.email}
+              placeholder="Email address"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div className="form-floating">
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              id="floatingPassword"
+              value={form.password}
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>UserName:</label>
-        <input
-          type="text"
-          name="username"
-          value={form.username}
-          onChange={handleChange}
-        />
+          <h1 class="h5 my-3 fw-normal">Personal Information</h1>
 
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-        />
-
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-        />
-
-        <label>City:</label>
-        <input
-          type="text"
-          name="city"
-          value={form.city}
-          onChange={handleChange}
-        />
-
-        <label>Country:</label>
-        <input
-          type="text"
-          name="country"
-          value={form.country}
-          onChange={handleChange}
-        />
-
-        <label>Phone Number:</label>
-        <input
-          type="text"
-          name="phoneNumber"
-          value={form.phoneNumber}
-          onChange={handleChange}
-        />
-
-        <button type="submit">Sign Up</button>
-      </form>
-
+          <div className="form-floating">
+            <input
+              type="text"
+              name="city"
+              className="form-control"
+              value={form.city}
+              placeholder="City"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">City</label>
+          </div>
+          <div className="form-floating">
+            <input
+              type="text"
+              name="country"
+              className="form-control"
+              value={form.country}
+              placeholder="Country"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">Country</label>
+          </div>
+          <div className="form-floating">
+            <input
+              type="text"
+              name="phoneNumber"
+              className="form-control"
+              value={form.phoneNumber}
+              placeholder="Phone Number"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">Phone Number</label>
+          </div>
+          <button
+            type="submit"
+            className="w-100 mt-4 mb-3 btn btn-lg btn-warning"
+          >
+            Signup
+          </button>
+        </form>
+        <p>Already have account?</p>
+        <Link to={"/login"}> Login</Link>
+      </main>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
     </div>
   );
 }
