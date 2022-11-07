@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
@@ -33,17 +33,17 @@ function Navbar() {
               </Link>
             </div>
             <div className="nav-item">
-              <Link className="nav-link" to="/all-posts">
+              <NavLink className="nav-link" to="/all-posts">
                 POST
-              </Link>
+              </NavLink>
             </div>
 
             {isLoggedIn && (
               <>
                 <div className="nav-item">
-                  <Link className="nav-link" to="/dashboard">
+                  <NavLink className="nav-link" to="/dashboard">
                     Dashboard
-                  </Link>
+                  </NavLink>
                 </div>
                 <div className="nav-item">
                   <Link className="nav-link" onClick={logOutUser}>
@@ -51,9 +51,9 @@ function Navbar() {
                   </Link>
                 </div>
                 <div className="nav-item">
-                  <Link className="nav-link" to="/profile">
+                  <NavLink className="nav-link" to="/profile">
                     Profile
-                  </Link>
+                  </NavLink>
                 </div>
                 <span className="username">{user && user.username}</span>
               </>
@@ -62,14 +62,14 @@ function Navbar() {
             {!isLoggedIn && (
               <>
                 <div className="nav-item">
-                  <Link className="nav-link" to="/signup">
+                  <NavLink className="nav-link" to="/signup">
                     Signup
-                  </Link>
+                  </NavLink>
                 </div>
                 <div className="nav-item">
-                  <Link className="nav-link" to="/login">
+                  <NavLink className="nav-link" to="/login">
                     Login
-                  </Link>
+                  </NavLink>
                 </div>
               </>
             )}

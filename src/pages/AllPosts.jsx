@@ -17,10 +17,10 @@ const AllPosts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="all-posts-outer-container">
       <h1>All Posts</h1>
-      <div className="container mt-3">
-        <div className="row">
+      <div className="container mt-3 ">
+        <div className="row ">
           {allPosts.map((post) => (
             <div className="col-md-4" key={post._id}>
               <div className="card bg-dark text-light p-2 my-2">
