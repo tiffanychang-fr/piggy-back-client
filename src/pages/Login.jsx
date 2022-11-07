@@ -49,31 +49,44 @@ function Login() {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
-
-      <form onSubmit={handleLoginSubmit}>
-        <label>Username:</label>
-        <input
-          type="text"
-          name="username"
-          value={form.username}
-          onChange={handleChange}
-        />
-
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-        />
-
-        <button type="submit">Login</button>
-      </form>
+      <h1 class="mt-5">Welcome !</h1>
+      <main className="form-login w-100 m-auto">
+        <form onSubmit={handleLoginSubmit}>
+          <div className="form-floating">
+            <input
+              type="text"
+              name="username"
+              className="form-control"
+              value={form.username}
+              placeholder="Username"
+              id="floatingInput"
+              onChange={handleChange}
+            />
+            <label for="floatingInput">Username</label>
+          </div>
+          <div className="form-floating">
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              id="floatingPassword"
+              value={form.password}
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button
+            type="submit"
+            className="w-100 mt-4 mb-3 btn btn-lg btn-warning"
+          >
+            Login
+          </button>
+        </form>
+        <p>Don't have an account yet?</p>
+        <Link to={"/signup"}>Sign Up</Link>
+      </main>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
     </div>
   );
 }

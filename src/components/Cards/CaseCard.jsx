@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CaseCard = ({ singleCase }) => {
   return (
     <div className="col-md-4">
-      <div className="card bg-dark text-light py-3 my-2">
+      <div className="card border-left-info py-3 my-2">
         <div className="card-body">
           <h1>🤖</h1>
           <div className="card-title">Case Id: {singleCase._id}</div>
