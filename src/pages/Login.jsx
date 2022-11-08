@@ -49,7 +49,7 @@ function Login() {
 
   return (
     <div className="LoginPage">
-      <h1 class="mt-5">Welcome !</h1>
+      <h1 className="mt-5">Welcome !</h1>
       <main className="form-login w-100 m-auto">
         <form onSubmit={handleLoginSubmit}>
           <div className="form-floating">

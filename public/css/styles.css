@@ -5937,6 +5937,7 @@ fieldset:disabled .btn {
 }
 
 .fixed-bottom {
+  /* position: relative; */
   position: fixed;
   right: 0;
   bottom: 0;
