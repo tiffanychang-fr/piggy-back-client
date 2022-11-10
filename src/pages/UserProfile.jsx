@@ -20,7 +20,6 @@ function UserProfile() {
               </div>
               <div className="col-md-7">
                 <div className="card-body">
-                  {/* <h1 className="text-start">User Profile</h1> */}
                   <h3 className="text-start ">
                     👤 Username: {user && user.username}
                   </h3>
