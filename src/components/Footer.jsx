@@ -1,8 +1,10 @@
 import React from "react";
+// import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer className="footer py-4 fixed-bottom">
+      {/* <footer className={`${styles.footer} ${styles.highlight}`}> */}
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-4 text-lg-start">
