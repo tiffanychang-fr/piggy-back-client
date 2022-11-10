@@ -11,7 +11,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div className="container">
         <a className="navbar-brand" href="#page-top">
-          <img src="./img/navbar-logo.svg" alt="..." />
+          <img src="/brand-logo.png" className="logo-img" alt="..." />
         </a>
         <button
           className="navbar-toggler"
@@ -50,12 +50,13 @@ function Navbar() {
                     LOGOUT
                   </Link>
                 </div>
-                <div className="nav-item">
+
+                {/* <div className="nav-item">
                   <NavLink className="nav-link" to="/profile">
                     Profile
                   </NavLink>
-                </div>
-                <span className="username">{user && user.username}</span>
+                </div> */}
+                <div className="username">Hi, @{user && user.username}</div>
               </>
             )}
 

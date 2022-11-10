@@ -37,70 +37,85 @@ const CreatePost = () => {
 
   return (
     <div>
-      Create Post:
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>
-            Title:
-            <input
-              type="text"
-              name="title"
-              value={form.title}
-              onChange={handleChange}
-              placeholder="Add a title"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Description:
-            <input
-              type="text"
-              name="description"
-              value={form.description}
-              onChange={handleChange}
-              placeholder="Add a description"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Country:
-            <input
-              type="text"
-              name="country"
-              value={form.country}
-              onChange={handleChange}
-              placeholder="Add a country"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            City:
-            <input
-              type="text"
-              name="city"
-              value={form.city}
-              onChange={handleChange}
-              placeholder="Add a city"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            Budget:
-            <input
-              type="number"
-              name="budget"
-              value={form.budget}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+      <div className="col-md-5 col-lg-4 mt-5 mx-auto">
+        <h1 className="mb-4">Create Post</h1>
+        <form className="needs-validation" onSubmit={handleSubmit}>
+          <div className="row g-3">
+            <div className="col-12">
+              <label className="form-label">Title</label>
+              <input
+                type="text"
+                className="form-control"
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                placeholder="Add a title"
+              />
+              <div className="invalid-feedback">Title required.</div>
+            </div>
 
-        <button type="submit">Submit post</button>
-      </form>
+            <div className="col-12">
+              <label className="form-label">Description</label>
+              <input
+                type="text"
+                className="form-control"
+                name="description"
+                value={form.description}
+                onChange={handleChange}
+                placeholder="Add a description"
+              />
+              <div className="invalid-feedback">Description required.</div>
+            </div>
+
+            <div className="col-md-6">
+              <label className="form-label">City</label>
+              <input
+                type="text"
+                className="form-control"
+                name="city"
+                value={form.city}
+                onChange={handleChange}
+                placeholder="Add a city"
+              />
+              <div className="invalid-feedback">City required.</div>
+            </div>
+
+            <div className="col-md-6">
+              <label className="form-label">Country</label>
+              <input
+                type="text"
+                className="form-control"
+                name="country"
+                value={form.country}
+                onChange={handleChange}
+                placeholder="Add a city"
+              />
+              <div className="invalid-feedback">Country required.</div>
+            </div>
+
+            <div className="col-12">
+              <label className="form-label">Budget</label>
+              <div className="input-group novalidate has-validation">
+                <span className="input-group-text">€</span>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="budget"
+                  value={form.budget}
+                  onChange={handleChange}
+                />
+                <div className="invalid-feedback">
+                  Please enter your budget.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button className="w-100 btn btn-primary btn-lg mt-5" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
