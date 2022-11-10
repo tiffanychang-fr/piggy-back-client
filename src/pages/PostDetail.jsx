@@ -39,6 +39,7 @@ const PostDetail = () => {
     <div>
       <h1>Post Details</h1>
       <PostDetailCard postData={postData} />
+      {console.log(`postData from postDetails:`, postData)}
       <h1>My Offers</h1>
       {console.log(allOffersByPost[0])}
 

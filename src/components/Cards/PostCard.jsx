@@ -42,9 +42,6 @@ const PostCard = ({ post, setPosts, posts }) => {
             Description: {post.description}
           </h6>
           <p className="card-text text-start px-3">Country: {post.country}</p>
-          {/* <div className="card-text">City: {post.city}</div>
-          <div className="card-text">Budget: {post.budget}</div>
-          <div className="card-text muted">Posted by:{post.postBy}</div> */}
           <Link to={{ pathname: `/my-posts/details/${post._id}` }} state={post}>
             <button className="btn bg-warning m-1">More details</button>
           </Link>

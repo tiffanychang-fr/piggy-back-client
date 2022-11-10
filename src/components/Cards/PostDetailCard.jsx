@@ -1,6 +1,7 @@
 import React from "react";
 
 const PostDetailCard = ({ postData }) => {
+  console.log(`postData from postDetailCard:`, postData);
   return (
     <div className="container my-3">
       <div className="row justify-content-center">

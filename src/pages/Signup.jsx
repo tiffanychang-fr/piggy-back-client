@@ -56,10 +56,10 @@ function Signup() {
 
   return (
     <div className="SignupPage">
-      <h1 class="mt-5">Join community</h1>
+      <h1 className="mt-5">Join community</h1>
       <main className="form-signup w-100 m-auto">
         <form onSubmit={handleSignupSubmit}>
-          <h1 class="h5 mb-3 fw-normal">Create account</h1>
+          <h1 className="h5 mb-3 fw-normal">Create account</h1>
           <div className="form-floating">
             <input
               type="text"
@@ -82,7 +82,7 @@ function Signup() {
               id="floatingInput"
               onChange={handleChange}
             />
-            <label for="floatingInput">Email address</label>
+            <label htmlFor="floatingInput">Email address</label>
           </div>
           <div className="form-floating">
             <input
@@ -94,10 +94,10 @@ function Signup() {
               placeholder="Password"
               onChange={handleChange}
             />
-            <label for="floatingPassword">Password</label>
+            <label htmlFor="floatingPassword">Password</label>
           </div>
 
-          <h1 class="h5 my-3 fw-normal">Personal Information</h1>
+          <h1 className="h5 my-3 fw-normal">Personal Information</h1>
 
           <div className="form-floating">
             <input
@@ -109,7 +109,7 @@ function Signup() {
               id="floatingInput"
               onChange={handleChange}
             />
-            <label for="floatingInput">City</label>
+            <label htmlFor="floatingInput">City</label>
           </div>
           <div className="form-floating">
             <input
@@ -121,7 +121,7 @@ function Signup() {
               id="floatingInput"
               onChange={handleChange}
             />
-            <label for="floatingInput">Country</label>
+            <label htmlFor="floatingInput">Country</label>
           </div>
           <div className="form-floating">
             <input
@@ -133,7 +133,7 @@ function Signup() {
               id="floatingInput"
               onChange={handleChange}
             />
-            <label for="floatingInput">Phone Number</label>
+            <label htmlFor="floatingInput">Phone Number</label>
           </div>
           <button
             type="submit"

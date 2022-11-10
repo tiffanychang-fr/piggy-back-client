@@ -62,7 +62,8 @@ function Login() {
               id="floatingInput"
               onChange={handleChange}
             />
-            <label for="floatingInput">Username</label>
+            {/* <label for="floatingInput">Username</label> */}
+            <label htmlFor="floatingInput">Username</label>
           </div>
           <div className="form-floating">
             <input
@@ -74,7 +75,8 @@ function Login() {
               placeholder="Password"
               onChange={handleChange}
             />
-            <label for="floatingPassword">Password</label>
+            {/* <label for="floatingPassword">Password</label> */}
+            <label htmlFor="floatingPassword">Password</label>
           </div>
           <button
             type="submit"
