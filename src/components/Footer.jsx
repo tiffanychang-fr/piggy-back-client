@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer-outer-container">
-      <div className="footer-container">
+    <footer className="footer-outer-container mt-auto">
+      <div className="footer-container position-relative">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-4 text-lg-start">
