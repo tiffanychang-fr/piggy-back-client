@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Piggy Back by Titos✨
+Piggy Back by Titos is an online community that aims to connect foreigners and locals in order to help people settle down easily. It allows users to make an online payment with stripe per offer accepted, whereas Piggy Back takes 20% of platform fee in each transaction. It is made with react.js, express.js, node.js, mongoDB, and styling with Bootstrap.
+Check it from the link 👉 [website demo](https://piggy-back.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🔧 Technical Features
+- `Authentication and Sessions`: applying `bcrypt` npm packages.  
+- `Checkout process`: redirect to stripe to finish the payment process
+- `Mailing service`: applying `nodemailer` npm packages. 
 
-## Available Scripts
+### 🚩 How does it work ?
+`Create a Post`: Create a post that describe your needs and budget.  
+`Seller make Offers`: We have 100+ available on the platform to serve your needs, receive an email if any offers arrive.  
+`Connect & Contact`: Accept an offer. You are now connected with your personal local helper. Ready to contact.
 
-In the project directory, you can run:
+***
 
-### `npm start`
+### 🏠 Home Page
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/77380159/201375212-5ab26e66-64a9-4a63-9a6e-0ab801734dc5.png">
+<img width="942" alt="image" src="https://user-images.githubusercontent.com/77380159/201375512-b4c116ca-0e49-42bd-bf6f-57635e681a33.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
 
-### `npm test`
+### 🔑 Login Page
+<img width="929" alt="image" src="https://user-images.githubusercontent.com/77380159/201375865-153898f1-1a8d-4e8d-a9ea-f9811c24c8bd.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***
 
-### `npm run build`
+### 📢 Post Page (Make an offer!)
+<img width="953" alt="image" src="https://user-images.githubusercontent.com/77380159/201380884-b9117fee-6770-4628-a7c0-8510627212e9.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 😎 User Dashboard
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/77380159/201381355-db249701-61e8-42b5-8ee2-59c74c9ff2d7.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***
 
-### `npm run eject`
+### 💳 Seller Dashboard (Stripe payout account)
+<img width="945" alt="image" src="https://user-images.githubusercontent.com/77380159/201376218-3213f699-3489-4255-b78c-53acaf0f62f1.png">
+<img width="948" alt="image" src="https://user-images.githubusercontent.com/77380159/201378849-974d586a-fdde-4fcc-9238-939dd36dc57a.png">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
