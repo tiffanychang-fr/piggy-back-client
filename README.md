@@ -1,5 +1,5 @@
 # Piggy Back by Titos✨
-Piggy Back by Titos is an online community that aims to connect foreigners and locals in order to help people settle down easily. It allows users to make an online payment with stripe per offer accepted, whereas Piggy Back takes 20% of platform fee in each transaction. It is made with react.js, express.js, node.js, mongoDB, and styling with Bootstrap.
+Piggy Back by Titos is an online community which connects foreigners and locals to help settling down process easier. It allows users to make an online payment with stripe per offer accepted, whereas Piggy Back takes 20% of platform fee in each transaction. A marketplace made with react.js, express.js, node.js, mongoDB, and styling with Bootstrap by Titos.
 Check it from the link 👉 [website demo](https://piggy-back.netlify.app/)
 
 ### 🔧 Technical Features
@@ -8,9 +8,9 @@ Check it from the link 👉 [website demo](https://piggy-back.netlify.app/)
 - `Mailing service`: applying `nodemailer` npm packages. 
 
 ### 🚩 How does it work ?
-`Create a Post`: Create a post that describe your needs and budget.  
-`Seller make Offers`: We have 100+ available on the platform to serve your needs, receive an email if any offers arrive.  
-`Connect & Contact`: Accept an offer. You are now connected with your personal local helper. Ready to contact.
+`Say Your Needs`: Create a post that describe your needs and budget.  
+`Accept Offer`: We have 100+ locals available on our platform to serve your needs, receive an email if any offers arrive.  
+`Connect & Contact`: Your selected personal local help will reach !
 
 ***
 
