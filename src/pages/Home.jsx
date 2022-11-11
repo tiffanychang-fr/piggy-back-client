@@ -40,7 +40,7 @@ function Home() {
           <div className="text-center">
             <h2 className="section-heading text-uppercase">Services</h2>
             <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              We connect foreigners and locals to help you settle down easily.
             </h3>
           </div>
           <div className="row text-center">
@@ -49,11 +49,10 @@ function Home() {
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
                 <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">E-Commerce</h4>
+              <h4 className="my-3">Marketplace</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                More than 100+ locals are available on our platform to provide
+                help to you. You select your helper.
               </p>
             </div>
             <div className="col-md-4">
@@ -61,11 +60,10 @@ function Home() {
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
                 <i className="fas fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Responsive Design</h4>
+              <h4 className="my-3">Community</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Simply create a post to find local helper. Get prepared for your
+                arrival in a foreign country !
               </p>
             </div>
             <div className="col-md-4">
@@ -73,11 +71,10 @@ function Home() {
                 <i className="fas fa-circle fa-stack-2x text-primary"></i>
                 <i className="fas fa-lock fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 className="my-3">Web Security</h4>
+              <h4 className="my-3">Secure Payment</h4>
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
+                Partner with stripe to secure online payment and transfer
+                earnings to your bank account.
               </p>
             </div>
           </div>

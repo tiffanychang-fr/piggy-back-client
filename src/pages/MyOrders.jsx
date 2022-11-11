@@ -45,7 +45,7 @@ function MyOrders() {
 
   return (
     <div>
-      <h1>My Orders</h1>
+      <h1 className="mt-4">MY ORDERS</h1>
       <div className="container">
         <div className="row mt-4">
           {/* {fakeOrders.map((order) => (

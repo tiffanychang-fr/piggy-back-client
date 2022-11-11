@@ -48,14 +48,14 @@ const ConnectNav = () => {
           user.stripe_seller.charges_enabled && (
             <>
               <div className="container-fluid">
-                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                <div className="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
                   <h1 className="h2 hb-0">Seller Dashboard</h1>
                   <h5>Hello, @{user.username}</h5>
                 </div>
 
                 <div className="row justify-content-around my-3">
                   <div className="col-md-4 text-center my-2">
-                    <div className="card border-left-primary py-3">
+                    <div className="card border-left-primary py-3 shadow">
                       <div className="card-body">
                         <h2>👾</h2>
                         <h3 className="py-2 text-primary-dashboard">
@@ -65,7 +65,7 @@ const ConnectNav = () => {
                     </div>
                   </div>
                   <div className="col-md-4 text-center my-2">
-                    <div className="card border-left-success py-3">
+                    <div className="card border-left-success py-3 shadow">
                       <div className="card-body">
                         <h2>🛴</h2>
                         <h3 className="py-2 text-success">
@@ -84,7 +84,7 @@ const ConnectNav = () => {
                     </div>
                   </div>
                   <div className="col-md-4 text-center my-2">
-                    <div className="card border-left-warning py-3">
+                    <div className="card border-left-warning py-3 shadow">
                       <div
                         className="card-body"
                         onClick={() => handlePayoutSetting()}

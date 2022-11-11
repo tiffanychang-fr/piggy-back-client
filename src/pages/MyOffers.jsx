@@ -49,7 +49,7 @@ function MyOffers() {
 
   return (
     <div>
-      <h1>My Offers</h1>
+      <h1 className="mt-4">My Offers</h1>
       <div className="container">
         <div className="row mt-4">
           {allOffers.length === 0

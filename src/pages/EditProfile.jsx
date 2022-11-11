@@ -42,7 +42,7 @@ function EditProfile() {
   return (
     <div>
       <div className="col-md-5 col-lg-4 mt-5 mx-auto">
-        <h1 className="mb-4">Edit Profile</h1>
+        <h1 className="mb-5">Edit Profile</h1>
         <form className="needs-validation" onSubmit={handleSubmit}>
           <div className="row g-3">
             <div className="col-12">

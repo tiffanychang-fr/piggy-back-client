@@ -20,12 +20,17 @@ const MyPosts = () => {
   }, [user]);
   return (
     <div>
-      <h1>My Posts page</h1>
-      <Link to="/my-posts/create">
-        <button className="btn btn-lg btn-warning my-3">➕Create Post</button>
-      </Link>
+      <h1 className="mt-4">MY POSTS</h1>
+      <div className="row justify-content-end text-center">
+        <div className="col-md-3">
+          <Link to="/my-posts/create">
+            <button className="btn btn-lg btn-warning">➕ POST</button>
+          </Link>
+        </div>
+      </div>
+
       <div className="container">
-        <div className=" row justify-content-around mx-3 my-3">
+        <div className="row justify-content-around mx-3 my-3">
           {posts.map((post) => {
             return (
               <PostCard

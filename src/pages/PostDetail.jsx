@@ -37,10 +37,10 @@ const PostDetail = () => {
 
   return (
     <div>
-      <h1>Post Details</h1>
+      <h1 className="mt-4">POST DETAILS</h1>
       <PostDetailCard postData={postData} />
       {console.log(`postData from postDetails:`, postData)}
-      <h1>My Offers</h1>
+      <h1>MY OFFERS</h1>
       {console.log(allOffersByPost[0])}
 
       {/* Post owner cannot make an offer to his/ her own post*/}

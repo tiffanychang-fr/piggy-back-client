@@ -35,7 +35,7 @@ const PostCard = ({ post, setPosts, posts }) => {
   };
   return (
     <div className="col-md-4 mt-3">
-      <div className="card bg-dark text-light">
+      <div className="card bg-dark text-light shadow-lg">
         <div className="card-body m-3">
           <h3 className="card-title pb-2">Title: {post.title}</h3>
           <h6 className="card-text text-start px-3">

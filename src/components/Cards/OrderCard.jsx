@@ -3,7 +3,7 @@ import React from "react";
 const OrderCard = ({ order }) => {
   return (
     <div className="col-md-4">
-      <div className="card bg-dark text-light p-2 my-2">
+      <div className="card bg-dark text-light p-2 my-2 shadow-lg">
         <div className="card-body">
           <h1>🐷</h1>
           <div className="card-title">Order Id: {order._id}</div>

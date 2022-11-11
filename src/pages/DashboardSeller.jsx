@@ -68,7 +68,7 @@ function DashboardSeller() {
             className="btn"
             onClick={() => setPendingBtnIsActive(true)}
           >
-            <h4>Pending Requests</h4>
+            <h4>Pending Offers</h4>
           </Link>
         </li>
         <li className="nav-item">

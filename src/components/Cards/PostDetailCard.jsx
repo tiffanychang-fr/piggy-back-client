@@ -6,7 +6,7 @@ const PostDetailCard = ({ postData }) => {
     <div className="container my-3">
       <div className="row justify-content-center">
         <div className="col-md-12 my-2">
-          <div className="card bg-dark text-light pt-3 pb-5 px-5">
+          <div className="card bg-dark text-light pt-3 pb-5 px-5 shadow">
             <div className="card-body">
               <h1 className="card-title mb-5">
                 Title: {postData.state?.title}

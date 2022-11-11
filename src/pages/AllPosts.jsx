@@ -18,7 +18,7 @@ const AllPosts = () => {
 
   return (
     <div className="all-posts-outer-container">
-      <h1>All Posts</h1>
+      <h1 className="mt-4">All Posts</h1>
       <div className="container mt-3 ">
         <div className="row ">
           {allPosts.map((post) => (

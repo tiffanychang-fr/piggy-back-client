@@ -33,7 +33,7 @@ const CreateOffer = () => {
 
   return (
     <div>
-      <h1 className="mt-3">Make an Offer!</h1>
+      <h1 className="mt-5 mb-3">Make an Offer!</h1>
       <h1>😎</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3 row justify-content-around">
